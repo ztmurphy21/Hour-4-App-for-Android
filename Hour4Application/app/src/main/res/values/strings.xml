@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Hour4Application</string>
+    <string name="title_activity_message">MessageActivity</string>
+</resources>
