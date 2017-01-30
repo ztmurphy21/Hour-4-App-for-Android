@@ -13,4 +13,38 @@
     tools:context="com.example.zacha.hour4application.MessageActivity"
     tools:showIn="@layout/activity_message">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="My new text "
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="17dp"
+        android:id="@+id/editText" />
+
+    <Button
+        android:text="Send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginTop="25dp"
+        android:id="@+id/buttonSend" />
+
+    <Button
+        android:text="Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonSend"
+        android:layout_toRightOf="@+id/buttonSend"
+        android:layout_toEndOf="@+id/buttonSend"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:id="@+id/buttonCancel" />
 </RelativeLayout>

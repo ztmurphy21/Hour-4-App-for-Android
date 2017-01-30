@@ -6,22 +6,44 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Menu;
+import android.app.Activity;
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.content.Intent;
 
 public class MessageActivity extends AppCompatActivity {
+    //Global variable declarations
+    Button sendMessageButton;
+    Button cancelButton;
+    EditText messageEditText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        messageEditText = (EditText) findViewById(R.id.editText);
+        sendMessageButton = (Button) findViewById(R.id.buttonSend);
+        sendMessageButton.setOnClickListener(new View.OnClickListener(){
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick (View v){
+                String message = messageEditText.getText().toString();
+                Intent result = new Intent();
+                result.putExtra("MESSAGE_DATA", message);
+                setResult(Activity.RESULT_OK, result);
+                finish();
+
+            }
+        });
+
+        cancelButton = (Button) findViewById(R.id.buttonCancel);
+        cancelButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v){
+                setResult(Activity.RESULT_CANCELED);
+                finish();
             }
         });
     }

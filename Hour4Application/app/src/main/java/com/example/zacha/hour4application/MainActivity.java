@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    //global variable declarations
     public final static int MESSAGE_REQUEST_CODE = 0;
     TextView messageTextView;
     Button getMessageButton;
